@@ -1,14 +1,14 @@
-# Astronaut Daily Schedule Organizer
+# 🚀 Astronaut Daily Schedule Organizer
 
 A console-based Java application designed to help astronauts organize their daily schedules. The application allows users to add, remove, view, and manage tasks with features like conflict resolution based on priority levels and a logging system for tracking application usage and errors.
 
 ---
 
-## Table of Contents
+## 📋 Table of Contents
 
-- [Features](#features)
-- [Design Patterns and Principles](#design-patterns-and-principles)
-- [Class Structure](#class-structure)
+- [✨ Features](#-features)
+- [📐 Design Patterns and Principles](#-design-patterns-and-principles)
+- [🏗️ Class Structure](#-class-structure)
   - [Main](#main)
   - [LoggerManager](#loggermanager)
   - [ScheduleManager](#schedulemanager)
@@ -18,97 +18,99 @@ A console-based Java application designed to help astronauts organize their dail
   - [InvalidTimeException](#invalidtimeexception)
   - [Observer](#observer)
   - [UserNotification](#usernotification)
-- [Usage Instructions](#usage-instructions)
-  - [Compiling the Application](#compiling-the-application)
-  - [Running the Application](#running-the-application)
-  - [Available Commands](#available-commands)
-- [Examples](#examples)
-- [Future Enhancements](#future-enhancements)
-- [Additional Information](#additional-information)
-- [Contact](#contact)
+- [🛠️ Usage Instructions](#-usage-instructions)
+  - [🔧 Compiling the Application](#compiling-the-application)
+  - [🚀 Running the Application](#running-the-application)
+  - [📝 Available Commands](#available-commands)
+- [📊 Examples](#-examples)
+- [🔮 Future Enhancements](#-future-enhancements)
+- [ℹ️ Additional Information](#-additional-information)
+- [📞 Contact](#-contact)
 
 ---
 
-## Features
+## ✨ Features
 
-- **Add Tasks**: Schedule new tasks with descriptions, start time, end time, and priority levels.
-- **Remove Tasks**: Delete existing tasks by description.
-- **View Tasks**: Display all scheduled tasks sorted by start time.
-- **Edit Tasks**: Modify existing tasks.
-- **Mark Tasks as Completed**: Update task status to completed.
-- **View Tasks by Priority**: Filter and view tasks based on priority levels.
-- **Conflict Resolution**: Handles task conflicts with priority consideration and allows overriding of lower-priority tasks.
-- **Logging System**: Logs application usage and errors, and allows viewing logs during the session.
-- **Exception Handling**: Gracefully handles invalid inputs and exceptions.
-
----
-
-## Design Patterns and Principles
-
-- **Singleton Pattern**: Used in `ScheduleManager` to ensure a single instance manages all tasks.
-- **Factory Pattern**: Implemented in `TaskFactory` to create `Task` objects.
-- **Observer Pattern**: Used to notify users of task conflicts via the `Observer` interface and `UserNotification` class.
-- **SOLID Principles**: Applied throughout the codebase to ensure clean, maintainable, and extensible code.
+- **➕ Add Tasks**: Schedule new tasks with descriptions, start time, end time, and priority levels.
+- **🗑️ Remove Tasks**: Delete existing tasks by description.
+- **👁️ View Tasks**: Display all scheduled tasks sorted by start time.
+- **🛠️ Edit Tasks**: Modify existing tasks.
+- **✅ Mark Tasks as Completed**: Update task status to completed.
+- **🔍 View Tasks by Priority**: Filter and view tasks based on priority levels.
+- **⚔️ Conflict Resolution**: Handles task conflicts with priority consideration and allows overriding of lower-priority tasks.
+- **📜 Logging System**: Logs application usage and errors, and allows viewing logs during the session.
+- **🚫 Exception Handling**: Gracefully handles invalid inputs and exceptions.
 
 ---
 
-## Class Structure
+## 📐 Design Patterns and Principles
 
-### Main
-
-**File**: `Main.java`
-
-**Description**: The entry point of the application. Handles user interactions, and commands, and integrates the logging system.
-
-**Key Methods**:
-
-- `main(String[] args)`: Initializes the application and handles the main loop for user commands.
-- `processCommand(String command, Scanner scanner)`: Processes user commands and directs to appropriate methods.
-- Command methods: `addTask`, `removeTask`, `editTask`, `markTask`, `viewByPriority`, `viewLogs`, `displayHelp`.
+- **Singleton Pattern**: Ensures only one instance of the `ScheduleManager` manages all tasks.
+- **Factory Pattern**: `TaskFactory` is used to create `Task` objects with input validation.
+- **Observer Pattern**: Notifies users of task conflicts using the `Observer` interface and `UserNotification` class.
+- **SOLID Principles**: Applied to ensure clean, maintainable, and extensible code throughout the project.
 
 ---
 
-### LoggerManager
+## 🏗️ Class Structure
 
-**File**: `LoggerManager.java`
-
-**Description**: Manages the logging system, including file and in-memory logs for the current session.
-
-**Key Methods**:
-
-- `getLogger()`: Returns the configured `Logger` instance.
-- `getInMemoryLogs()`: Retrieves the logs stored in memory for the current session.
-
----
-
-### ScheduleManager
-
-**File**: `ScheduleManager.java`
-
-**Description**: A singleton class that manages all tasks. Handles adding, removing, editing tasks, and conflict resolution based on priority levels.
-
-**Key Methods**:
-
-- `addTask(Task newTask)`: Adds a new task with conflict checking and resolution.
-- `removeTask(String description)`: Removes a task based on its description.
-- `editTask(String oldDescription, Task newTask)`: Edits an existing task.
-- `markTaskAsCompleted(String description)`: Marks a task as completed.
-- `viewTasks()`: Displays all tasks sorted by start time.
-- `viewTasksByPriority(PriorityLevel priority)`: Displays tasks filtered by priority.
-- `addObserver(Observer observer)`: Adds an observer for notifications.
+| Class Name      | Description                                                             |
+|-----------------|-------------------------------------------------------------------------|
+| **Main**        | Entry point, processes user commands and integrates the logging system.  |
+| **LoggerManager**| Manages the logging system for both in-memory and file-based logs.      |
+| **ScheduleManager** | Singleton class that manages tasks and handles conflict resolution.  |
+| **Task**        | Represents a task with details such as time, description, and priority.  |
+| **TaskFactory** | Implements the Factory Pattern to create validated `Task` objects.       |
+| **PriorityLevel**| Enumeration representing task priority levels (`HIGH`, `MEDIUM`, `LOW`).|
+| **InvalidTimeException**| Custom exception class for handling invalid time inputs.         |
+| **Observer**    | Interface for notifying users of task conflicts or changes.              |
+| **UserNotification**| Implements the `Observer` interface to display notifications to users.|
 
 ---
 
-### Task
+### **Main** 🏁
 
-**File**: `Task.java`
+- **File**: `Main.java`
+- **Description**: Handles user interactions, command inputs, and logging integration.
+- **Key Methods**: 
+  - `main(String[] args)`
+  - `processCommand(String command, Scanner scanner)`
+  - Commands: `addTask`, `removeTask`, `editTask`, `markTask`, `viewByPriority`, `viewLogs`, `displayHelp`.
 
-**Description**: Represents a task with properties like description, start time, end time, priority level, and completion status.
+---
 
-**Key Methods**:
+### **LoggerManager** 📝
 
-- Getters and Setters for all properties.
-- `toString()`: Returns a formatted string representation of the task.
+- **File**: `LoggerManager.java`
+- **Description**: Manages application logs.
+- **Key Methods**: 
+  - `getLogger()`
+  - `getInMemoryLogs()`
+
+---
+
+### **ScheduleManager** 📅
+
+- **File**: `ScheduleManager.java`
+- **Description**: Manages tasks, handles conflict resolution based on priority levels, and notifies users.
+- **Key Methods**: 
+  - `addTask(Task newTask)`
+  - `removeTask(String description)`
+  - `editTask(String oldDescription, Task newTask)`
+  - `markTaskAsCompleted(String description)`
+  - `viewTasks()`
+  - `viewTasksByPriority(PriorityLevel priority)`
+  - `addObserver(Observer observer)`
+
+---
+
+### **Task** 📝
+
+- **File**: `Task.java`
+- **Description**: Represents a task object.
+- **Key Methods**:
+  - Getters and Setters for task properties.
+  - `toString()`: Provides a string representation of the task.
 
 ---
 
