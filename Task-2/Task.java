@@ -1,4 +1,3 @@
-// File: Task.java
 import java.time.LocalTime;
 
 public class Task {

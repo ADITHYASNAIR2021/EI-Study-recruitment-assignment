@@ -1,0 +1,7 @@
+[2024-10-01 18:58:40] [INFO   ] Task '{0}' added successfully. 
+[2024-10-01 18:58:56] [WARNING] Failed to add task '{0}': {1} 
+[2024-10-01 18:59:18] [INFO   ] Task '{0}' added successfully. 
+[2024-10-01 18:59:38] [WARNING] Failed to add task '{0}': {1} 
+[2024-10-01 19:00:20] [INFO   ] Task '{0}' marked as completed. 
+[2024-10-01 19:00:37] [INFO   ] Task '{0}' removed successfully. 
+[2024-10-01 19:00:44] [WARNING] Failed to remove task '{0}': Task not found. 

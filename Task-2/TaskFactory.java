@@ -1,5 +1,5 @@
-// File: TaskFactory.java
 import java.time.LocalTime;
+import java.time.format.DateTimeParseException;
 
 public class TaskFactory {
     public static Task createTask(String description, String startTimeStr, String endTimeStr, String priorityStr) throws InvalidTimeException {
@@ -13,6 +13,10 @@ public class TaskFactory {
             }
 
             return new Task(description, startTime, endTime, priority);
+        } catch (DateTimeParseException e) {
+            throw new InvalidTimeException("Invalid time format. Please use HH:MM (24-hour format).");
+        } catch (IllegalArgumentException e) {
+            throw new InvalidTimeException("Invalid priority level. Please use High, Medium, or Low.");
         } catch (Exception e) {
             throw new InvalidTimeException("Invalid input: " + e.getMessage());
         }
