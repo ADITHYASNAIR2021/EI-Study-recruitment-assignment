@@ -24,9 +24,6 @@ A console-based Java application designed to help astronauts organize their dail
   - [Available Commands](#available-commands)
 - [Examples](#examples)
 - [Future Enhancements](#future-enhancements)
-- [Use Case Diagram](#use-case-diagram)
-  - [XML Code for Use Case Diagram](#xml-code-for-use-case-diagram)
-- [How to Use the Code](#how-to-use-the-code)
 - [Additional Information](#additional-information)
 - [Contact](#contact)
 
@@ -61,7 +58,7 @@ A console-based Java application designed to help astronauts organize their dail
 
 **File**: `Main.java`
 
-**Description**: The entry point of the application. Handles user interactions, commands, and integrates the logging system.
+**Description**: The entry point of the application. Handles user interactions, and commands, and integrates the logging system.
 
 **Key Methods**:
 
@@ -75,7 +72,7 @@ A console-based Java application designed to help astronauts organize their dail
 
 **File**: `LoggerManager.java`
 
-**Description**: Manages the logging system, including file logging and in-memory logging for the current session.
+**Description**: Manages the logging system, including file and in-memory logs for the current session.
 
 **Key Methods**:
 
@@ -131,7 +128,7 @@ A console-based Java application designed to help astronauts organize their dail
 
 **File**: `PriorityLevel.java`
 
-**Description**: An enumeration representing the priority levels for tasks (`HIGH`, `MEDIUM`, `LOW`).
+**Description**: An enumeration representing task priority levels (`HIGH`, `MEDIUM`, `LOW`).
 
 ---
 
@@ -151,7 +148,7 @@ A console-based Java application designed to help astronauts organize their dail
 
 **Key Methods**:
 
-- `update(String message)`: Method to be implemented by observers to receive notifications.
+- `update(String message)`: The method is to be implemented by observers to receive notifications.
 
 ---
 
@@ -179,6 +176,85 @@ A console-based Java application designed to help astronauts organize their dail
 
 ### Running the Application
 
-```bash
+   ```bash
     java Main
+```
 
+### Available Commands
+
+- **add**: Add a new task.
+- **remove**: Remove an existing task.
+- **view**: View all tasks.
+- **edit**: Edit an existing task.
+- **mark**: Mark a task as completed.
+- **view priority**: View tasks by priority.
+- **view logs**: View application logs.
+- **help**: Display help message.
+- **exit**: Exit the application.
+
+## Examples
+
+### Adding a Task
+
+```plaintext
+> add
+Enter description: Morning Exercise
+Enter start time (HH: MM): 07:00
+Enter end time (HH: MM): 08:00
+Enter priority (High, Medium, Low): High
+Task added successfully. No conflicts.
+```
+### Viewing All Tasks
+
+```plaintext
+> view
+07:00 - 08:00: Morning Exercise [HIGH]
+```
+
+### Removing a Task
+
+```plaintext
+> remove
+Enter task description to remove: Morning Exercise
+Task removed successfully.
+```
+### Viewing Tasks by Priority
+
+```plaintext
+> view priority
+Enter priority level to view (High, Medium, Low): High
+No tasks with priority HIGH
+```
+
+### Viewing Logs
+
+```plaintext
+> view logs
+Session Logs:
+[2024-03-29 10:35:00] [INFO   ] Task 'Morning Exercise' added successfully.
+[2024-03-29 10:36:05] [INFO   ] Task 'Morning Exercise' removed successfully.
+```
+### Future Enhancements
+
+- `Graphical User Interface (GUI)`: Implement a GUI using JavaFX to enhance user interaction.
+- `Recurring Tasks`: Add functionality to support recurring tasks (daily, weekly, monthly).
+- `Task Categories`: Introduce categories or tags for tasks to allow better organization.
+- `Notifications and Reminders`: Implement a system to notify users of upcoming tasks.
+- `Data Persistence`: Save tasks to a file or database to maintain the schedule between sessions.
+- `User Authentication`: Support multiple users with personalized schedules.
+
+### Additional Information
+
+- `Time Format`: All times should be entered in 24-hour format (HH: MM).
+- `Priority Levels`: Priority can be High, Medium, or Low. This affects conflict resolution.
+- `Conflict Resolution`: When adding a task that conflicts with existing tasks:
+- If the new task has a higher priority, you can choose to override the existing tasks.
+- If the new task has an equal or lower priority, it will not be added, and you will be notified of the conflict.
+
+### Contact
+
+```
+Adithya S Nair
+adithyasnair2021@gmail.com
+https://www.linkedin.com/in/adithya-s-nair/
+```
