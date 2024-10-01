@@ -6,7 +6,7 @@ interface Observer {
 }
 
 class Subject {
-    private List<Observer> observers = new ArrayList<>();
+    private final List<Observer> observers = new ArrayList<>();
     private String message;
 
     public void addObserver(Observer observer) {
@@ -26,7 +26,7 @@ class Subject {
 }
 
 class ConcreteObserver implements Observer {
-    private String name;
+    private final String name;
 
     public ConcreteObserver(String name) {
         this.name = name;

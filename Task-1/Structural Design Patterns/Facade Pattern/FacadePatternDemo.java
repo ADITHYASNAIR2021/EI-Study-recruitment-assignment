@@ -13,8 +13,8 @@ class Subsystem2 {
 
 // Facade class that simplifies the subsystem usage
 class Facade {
-    private Subsystem1 subsystem1;
-    private Subsystem2 subsystem2;
+    private final Subsystem1 subsystem1;
+    private final Subsystem2 subsystem2;
 
     public Facade() {
         subsystem1 = new Subsystem1();
