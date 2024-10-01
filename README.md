@@ -15,13 +15,16 @@ This repository contains two coding exercises that assess both your software des
 
 System design focuses on defining the architecture and components of a software system to satisfy specific requirements. It's crucial to ensure scalability, maintainability, and efficiency. Patterns like **behavioral**, **structural**, and **creational** design patterns are important in organizing code to handle complex systems.
 
-### Common Design Patterns Used in Task 1
+## 💡 Design Patterns Overview
 
-| Pattern Type           | Example Used       | Description                                                                 |
-|------------------------|--------------------|-----------------------------------------------------------------------------|
-| **Behavioral**          | Observer Pattern   | Defines how objects communicate. Example: **Observer Pattern** for updates. |
-| **Creational**          | Singleton Pattern  | Handles object creation. Example: **Singleton Pattern** for a single instance.|
-| **Structural**          | Adapter Pattern    | Defines object composition. Example: **Adapter Pattern** for compatibility. |
+| Pattern Type        | Pattern             | Description                                                                 |
+|---------------------|---------------------|-----------------------------------------------------------------------------|
+| **Behavioral**       | **Observer Pattern** | Defines how objects communicate and react to changes in state.               |
+|                     | **Strategy Pattern** | Encapsulates interchangeable algorithms, enabling flexibility at runtime.    |
+| **Creational**       | **Singleton Pattern**| Ensures a class has only one instance and provides global access to it.      |
+|                     | **Factory Pattern**  | Provides an interface to create objects without exposing the creation logic. |
+| **Structural**       | **Adapter Pattern**  | Converts one interface into another to work with incompatible interfaces.    |
+|                     | **Facade Pattern**   | Simplifies the interaction with complex subsystems through a unified interface. |
 
 ---
 
